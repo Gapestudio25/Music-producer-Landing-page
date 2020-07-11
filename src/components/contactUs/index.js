@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
-  playlist: {
+  contactUs: {
     height: '100vh',
   },
   heroContent: {
@@ -13,16 +13,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Playlist = () => {
+const ContactUs = () => {
   const classes = useStyles();
 
   return (
     <React.Fragment>
-      <div id="playlist" className={classes.playlist}>
+      <div id="contactUs" className={classes.contactUs}>
         <CssBaseline />
         <Container maxWidth="sm" component="main" className={classes.heroContent}>
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-            Playlist
+            Contact Us
           </Typography>
         </Container>
       </div>
@@ -30,4 +30,4 @@ const Playlist = () => {
   );
 };
 
-export default Playlist;
+export default ContactUs;
