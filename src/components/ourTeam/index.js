@@ -1,17 +1,37 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import {Container,
+  Typography,
+  Grid,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  ourTeam: {
-    height: '100vh',
-  },
+  // ourTeam: {
+  //   height: '100vh',
+  // },
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
+  imageForm: {
+    width: '300px',
+    height: '300px',
+    borderRadius: '50%',
+  },
 }));
+
+const members = [
+  {
+    name: 'Empleado',
+    cargo: 'Cargo',
+    photo: 'https://via.placeholder.com/150',
+  },
+  {
+    name: 'Empleado',
+    cargo: 'Cargo',
+    photo: 'https://via.placeholder.com/150',
+  },
+];
 
 const OurTeam = () => {
   const classes = useStyles();
@@ -20,10 +40,69 @@ const OurTeam = () => {
     <React.Fragment>
       <div id="ourTeam" className={classes.ourTeam}>
         <CssBaseline />
-        <Container maxWidth="sm" component="main" className={classes.heroContent}>
-          <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+        <Container
+          maxWidth="sm"
+          component="main"
+          className={classes.heroContent}
+        >
+          <Typography
+            component="h1"
+            variant="h2"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
             Our Team
           </Typography>
+        </Container>
+
+        <Container maxWidth="md" component="main">
+          <Grid
+            container
+            justify="space-around"
+          >
+            {members.map((employ, idx) => (
+              <Grid
+                key={idx}
+                container
+                item
+                spacing={10}
+                justify="center"
+                alignItems="center"
+                xs={12}
+                sm={6}
+              >
+                <img
+                  className={classes.imageForm}
+                  src={employ.photo}
+                  alt="Foto de perfil"
+                />
+                <Grid
+                  item
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Typography
+                    variant="h5"
+                    align="center"
+                    color="textPrimary"
+                    gutterBottom
+                  >
+                    {employ.name + idx}
+                  </Typography>
+
+                  <Typography
+                    variant="subtitle1"
+                    align="center"
+                    color="textPrimary"
+                    gutterBottom
+                  >
+                    {employ.cargo + idx}
+                  </Typography>
+                </Grid>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
       </div>
     </React.Fragment>
