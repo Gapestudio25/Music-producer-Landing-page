@@ -35,6 +35,11 @@ const navigation = [
     link: '#aboutMe',
   },
   {
+    tittle: 'Logo',
+    link: '#home',
+    img: 'iyuiyiyuiy',
+  },
+  {
     tittle: 'Our Team',
     link: '#ourTeam',
   },
@@ -56,10 +61,12 @@ const Header = () => {
       <Toolbar className={classes.toolbar}>
         <Grid container spacing={5} justify="center">
           <nav>
-            <IconButton href="#home">
-              Logo
-            </IconButton>
-            {navigation.map((link) => (
+            {navigation.map((link, idx) => (
+              (link.image !== undefined) ?
+                <IconButton href={link.link}>
+                  {link.image}
+                </IconButton> :
+              
               <Link variant="button" color="textPrimary" key={link.tittle} href={link.link} className={classes.link}>
                 {link.tittle}
               </Link>
