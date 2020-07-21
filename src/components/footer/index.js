@@ -9,13 +9,39 @@ import {
   Box,
 } from '@material-ui/core';
 import {Facebook, Twitter, Instagram, YouTube} from '@material-ui/icons';
+import logo from '../../assets/logo.png';
+
+const useStyles = makeStyles((theme) => ({
+  footer: {
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(2),
+      paddingBottom: theme.spacing(2),
+    },
+  },
+  logo: {
+    borderRadius: '50%',
+    width: '80px',
+  },
+  social: {
+    margin: '30px 30px 0 30px',
+    textDecoration: 'none',
+  },
+  socialLink: {
+    color: '#000000',
+    '&:hover': {
+      color: '#3d3d3d',
+    }
+  }
+}));
 
 function Logo() {
+  const classes = useStyles();
+
   return (
     <Typography variant="h4" align="center">
-      <Link color="inherit" href="https://www.google.com/">
-        Logo
-      </Link>
+      <img className={classes.logo} src={logo} alt="Logo" />
     </Typography>
   );
 }
@@ -32,23 +58,6 @@ function Copyright() {
     </Typography>
   );
 }
-
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-    [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6),
-    },
-  },
-  social: {
-    margin: '40px 30px 0 30px',
-    textDecoration: 'none',
-    color: '#000000',
-  }
-}));
 
 const socials = [
   {
@@ -79,21 +88,21 @@ const Footer = () => {
   return (
     <React.Fragment>
       <Container maxWidth="md" component="footer" className={classes.footer}>
-        <Box mb={1}>
+        <Box>
           <Logo />
         </Box>
 
-        <Box mb={4}>
+        <Box mb={1}>
           <Copyright />
         </Box>
 
         <Divider />
 
-        <Grid container spacing={4} justify="center">
-          {socials.map((social) => (
-            <Box key={social.alt} mt={5} className={classes.social}>
-              <Typography gutterBottom>
-                <a href={social.link}>
+        <Grid container justify="center">
+          {socials.map((social, idx) => (
+            <Box key={idx} className={classes.social}>
+              <Typography>
+                <a href={social.link} className={classes.socialLink}>
                   {
                     social.icon === 'Facebook' ? <Facebook/> :
                       social.icon === 'Instagram' ? <Instagram/> :

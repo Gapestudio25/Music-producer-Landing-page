@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import logo from '../../assets/logo.png';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -16,8 +17,17 @@ const useStyles = makeStyles((theme) => ({
   nav: {
     textAlign: 'center',
   },
+  logo: {
+    borderRadius: '50%',
+    width: '60px',
+    margin: '0 20px',
+  },
   link: {
     margin: theme.spacing(1, 1.5),
+    padding: theme.spacing(2),
+    '&:hover': {
+      background: 'rgba(255, 255, 255, .3)',
+    }
   },
 }));
 
@@ -37,7 +47,6 @@ const navigation = [
   {
     tittle: 'Logo',
     link: '#home',
-    img: 'iyuiyiyuiy',
   },
   {
     tittle: 'Our Team',
@@ -62,12 +71,19 @@ const Header = () => {
         <Grid container spacing={5} justify="center">
           <nav>
             {navigation.map((link, idx) => (
-              (link.image !== undefined) ?
-                <IconButton href={link.link}>
-                  {link.image}
+              (link.tittle === 'Logo') ?
+                <IconButton key={idx} href={link.link}>
+                  <img className={classes.logo} src={logo} alt="Logo" />
                 </IconButton> :
               
-              <Link variant="button" color="textPrimary" key={link.tittle} href={link.link} className={classes.link}>
+              <Link
+                variant="button"
+                underline="none"
+                color="textPrimary"
+                key={link.tittle}
+                href={link.link}
+                className={classes.link}
+              >
                 {link.tittle}
               </Link>
             ))}

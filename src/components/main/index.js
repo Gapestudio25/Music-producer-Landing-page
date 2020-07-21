@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 'auto',
     color: '#ffffff',
     padding: '70px 0',
-
   },
   img: {
     width:'100%',
@@ -47,7 +46,7 @@ const Main = () => {
   return (
     <Container id="home" className={classes.container} maxWidth="xl" component="main">
       <Modal open={open} close={setOpen}/>
-      <Grid direction="row" container spacing={5} alignItems="center">
+      <Grid direction="row" container alignItems="center">
         <CssBaseline />
         <Grid container item direction="column" xs={12} md={6}>
           <Grid item>
