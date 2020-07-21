@@ -11,6 +11,11 @@ const useStyles = makeStyles((theme) => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
+  reproducer: {
+    width: '100%',
+    maxWidth: '1024px',
+    height: '80vh',
+  }
 }));
 
 const Playlist = () => {
@@ -24,6 +29,9 @@ const Playlist = () => {
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
             Playlist
           </Typography>
+        </Container>
+        <Container maxWidth="md" component="main">
+          <iframe src="https://player.beatstars.com/?storeId=107684" className={classes.reproducer} />
         </Container>
       </div>
     </React.Fragment>
