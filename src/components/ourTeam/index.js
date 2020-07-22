@@ -1,17 +1,21 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import {Container,
+import {
+  Container,
   Typography,
   Grid,
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  // ourTeam: {
-  //   height: '100vh',
-  // },
+  ourTeam: {
+    // height: '100vh',
+    //background: '#FF0318',
+    paddingBottom: theme.spacing(4),
+    color: '#ffffff',
+  },
   heroContent: {
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(6, 0, 10),
   },
   imageForm: {
     width: '300px',
@@ -40,18 +44,8 @@ const OurTeam = () => {
     <React.Fragment>
       <div id="ourTeam" className={classes.ourTeam}>
         <CssBaseline />
-        <Container
-          maxWidth="sm"
-          component="main"
-          className={classes.heroContent}
-        >
-          <Typography
-            component="h1"
-            variant="h2"
-            align="center"
-            color="textPrimary"
-            gutterBottom
-          >
+        <Container maxWidth="sm" component="main" className={classes.heroContent}>
+          <Typography component="h1" variant="h2" align="center" color="inherit" gutterBottom>
             Our Team
           </Typography>
         </Container>
@@ -77,15 +71,11 @@ const OurTeam = () => {
                   src={employ.photo}
                   alt="Foto de perfil"
                 />
-                <Grid
-                  item
-                  justify="center"
-                  alignItems="center"
-                >
+                <Grid item>
                   <Typography
                     variant="h5"
                     align="center"
-                    color="textPrimary"
+                    color="inherit"
                     gutterBottom
                   >
                     {employ.name + idx}
@@ -94,7 +84,7 @@ const OurTeam = () => {
                   <Typography
                     variant="subtitle1"
                     align="center"
-                    color="textPrimary"
+                    color="inherit"
                     gutterBottom
                   >
                     {employ.cargo + idx}

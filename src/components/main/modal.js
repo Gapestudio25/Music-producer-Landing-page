@@ -1,5 +1,7 @@
 import React from 'react';
-import {Modal as ModalUi,
+import PropTypes from 'prop-types';
+import {
+  Modal as ModalUi,
   Card,
   CardHeader,
   CardActions,
@@ -20,15 +22,17 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   card: {
-    background: 'linear-gradient(180deg, rgba(161,161,161,1) 0%, rgba(134,1,13,1) 50%)',
+    background: 'linear-gradient(180deg, rgba(1,0,117,1) 0%, rgba(134,1,13,1) 100%)',
   },
   cardHeader: {
     padding: theme.spacing(5, 5, 3),
+    color: '#ffffff',
   },
   cardContent: {
-    width: 700,
-    padding: theme.spacing(0, 5),
-  },
+    width: '80vw',
+    maxWidth: 700,
+    maxHeight: '60vh',
+    padding: theme.spacing(0, 5),  },
   cardBottom: {
     padding: theme.spacing(0, 5, 5),
   },
@@ -59,7 +63,7 @@ const Modal = ({open, close}) => {
 
   const handleCloseModal = () => {
     close(false);
-  }
+  };
 
   return (
     <ModalUi
@@ -75,7 +79,7 @@ const Modal = ({open, close}) => {
       }}
     >
       <Container component="main" maxWidth="xs">
-      <CssBaseline />
+        <CssBaseline />
         <div className={classes.paper}>
           <Card className={classes.card}>
             <CardHeader
@@ -85,7 +89,7 @@ const Modal = ({open, close}) => {
                   <Typography align="center" component="h1" variant="subtitle1">
                     SIGN UP FOR
                   </Typography>
-                  <Typography variant="h4" align="center" color="textPrimary">
+                  <Typography variant="h4" align="center" color="inherit">
                     <span role="img" aria-label="Music Tone">🔥 </span>
                     1 FREE BEAT
                     <span role="img" aria-label="Music Tone"> 🔥</span>
@@ -136,7 +140,12 @@ const Modal = ({open, close}) => {
         </div>
       </Container>
     </ModalUi>
-  )
-}
+  );
+};
 
-export default Modal
+Modal.propTypes = {
+  open: PropTypes.bool,
+  close: PropTypes.bool,
+};
+
+export default Modal;

@@ -13,11 +13,13 @@ import logo from '../../assets/logo.png';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
+    padding: theme.spacing(1, 0),
+    marginTop: theme.spacing(5),
+    background: 'rgba(255, 255, 255, .3)',
+    borderTop: '1px solid #ffffff',
+    color: '#ffffff',
     [theme.breakpoints.up('sm')]: {
-      paddingTop: theme.spacing(2),
-      paddingBottom: theme.spacing(2),
+      padding: theme.spacing(2, 2),
     },
   },
   logo: {
@@ -29,9 +31,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
   },
   socialLink: {
-    color: '#000000',
+    color: '#ffffff',
     '&:hover': {
-      color: '#3d3d3d',
+      color: '#DEDEDE',
     }
   }
 }));
@@ -48,7 +50,7 @@ function Logo() {
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant="body2" color="inherit" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
         Your Website
@@ -87,7 +89,7 @@ const Footer = () => {
 
   return (
     <React.Fragment>
-      <Container maxWidth="md" component="footer" className={classes.footer}>
+      <Container maxWidth="xl" component="footer" className={classes.footer}>
         <Box>
           <Logo />
         </Box>

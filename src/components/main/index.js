@@ -6,10 +6,13 @@ import {Grid, Container, Typography, Button, CssBaseline} from '@material-ui/cor
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    background: 'radial-gradient(circle, rgba(134,1,13,1) 0%, rgba(20,19,119,1) 100%)', 
+    background: 'radial-gradient(circle, rgba(134,1,13,1) 0%, rgba(20,19,119,1) 100%)',
     marginTop: 'auto',
     color: '#ffffff',
     padding: '70px 0',
+  },
+  mainText: {
+    margin: theme.spacing(5, 0)
   },
   img: {
     width:'100%',
@@ -41,14 +44,14 @@ const Main = () => {
 
   const handleOpenModal = () => {
     setOpen(true);
-  }
+  };
 
   return (
     <Container id="home" className={classes.container} maxWidth="xl" component="main">
       <Modal open={open} close={setOpen}/>
       <Grid direction="row" container alignItems="center">
         <CssBaseline />
-        <Grid container item direction="column" xs={12} md={6}>
+        <Grid container item direction="column" xs={12} md={6} className={classes.mainText}>
           <Grid item>
             <Typography variant="h4" align="center" color="initial" gutterBottom>
               Great and High 
