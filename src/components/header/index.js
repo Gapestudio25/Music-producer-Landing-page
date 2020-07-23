@@ -1,8 +1,8 @@
-import React from 'react';
+import React/*, {useState}*/ from 'react';
 import {
   Toolbar,
   Link,
-  IconButton,
+  AppBar,
 } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import logo from '../../assets/logo.png';
@@ -67,26 +67,37 @@ const navigation = [
 
 const Header = () => {
   const classes = useStyles();
+  // const [open, setOpen] = useState(false);
+
+  // const handleDrawerOpen = () => {
+  //   setOpen(true);
+  // };
+
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
-    <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-      {navigation.map((section, idx) => (
-        (section.title === 'Logo') ?
-          <IconButton key={idx} href={section.link}>
-            <img className={classes.logo} src={logo} alt="Logo" />
-          </IconButton> :
-          <Link
-            color="inherit"
-            noWrap
-            key={idx}
-            variant="body2"
-            href={section.link}
-            className={classes.toolbarLink}
-          >
-            {section.title}
-          </Link>
-      ))}
-    </Toolbar>
+    <AppBar position="fixed">
+      <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
+        {navigation.map((section, idx) => (
+          (section.title === 'Logo') ?
+            <Link key={idx} href={section.link}>
+              <img className={classes.logo} src={logo} alt="Logo" />
+            </Link> :
+            <Link
+              color="inherit"
+              noWrap
+              key={idx}
+              variant="body2"
+              href={section.link}
+              className={classes.toolbarLink}
+            >
+              {section.title}
+            </Link>
+        ))}
+      </Toolbar>
+    </AppBar>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import {
   Modal as ModalUi,
@@ -59,11 +59,51 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Modal = ({open, close}) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const classes = useStyles();
 
   const handleCloseModal = () => {
     close(false);
   };
+  
+  const encode = (data) => {
+    const formData = new FormData();
+    Object.keys(data).forEach((k)=>{
+      formData.append(k,data[k])
+    });
+    return formData
+  }
+
+  const handleSubmit = e => {
+    const data = { "form-name": "contact", name, email }
+    
+    fetch("/", {
+      method: "POST",
+      // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
+      body: encode(data)
+    })
+      .then(() => {
+        handleCloseModal();
+        alert("Form Submission Successful!!");
+      })
+      .catch(error => {
+        handleCloseModal();
+        alert("Form Submission Failed!");
+      });
+
+    e.preventDefault();
+  };
+
+  const handleChange = e => {
+    const {name, value} = e.target
+    if (name === 'name'){
+      return setName(value)
+    }
+    if (name === 'email'){
+      return setEmail(value)
+    }
+  }
 
   return (
     <ModalUi
@@ -100,11 +140,10 @@ const Modal = ({open, close}) => {
             <form
               name="contact"
               className={classes.form}
-              method="post"
-              netlify
-              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              action="/thank-you/"
+              method="POST"
               data-netlify="true"
-              data-netlify-recaptcha="true"
             >
               <CardContent className={classes.cardContent}>
                 <TextField
@@ -113,6 +152,8 @@ const Modal = ({open, close}) => {
                   margin="normal"
                   required
                   fullWidth
+                  value={name}
+                  onChange={handleChange}
                   id="name"
                   label="Name"
                   name="name"
@@ -124,8 +165,11 @@ const Modal = ({open, close}) => {
                   className={classes.inputs}
                   variant="filled"
                   margin="normal"
+                  type="email"
                   required
                   fullWidth
+                  value={email}
+                  onChange={handleChange}
                   id="email"
                   label="Email Address"
                   name="email"
@@ -153,7 +197,7 @@ const Modal = ({open, close}) => {
 
 Modal.propTypes = {
   open: PropTypes.bool,
-  close: PropTypes.bool,
+  close: PropTypes.any,
 };
 
 export default Modal;
