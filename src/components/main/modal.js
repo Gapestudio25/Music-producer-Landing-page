@@ -97,7 +97,15 @@ const Modal = ({open, close}) => {
                 </>
               }
             />
-            <form className={classes.form} method="POST" data-netlify="true">
+            <form
+              name="contact"
+              className={classes.form}
+              method="post"
+              netlify
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+              data-netlify-recaptcha="true"
+            >
               <CardContent className={classes.cardContent}>
                 <TextField
                   className={classes.inputs}
