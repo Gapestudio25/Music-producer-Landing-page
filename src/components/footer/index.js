@@ -88,36 +88,34 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <Container maxWidth="xl" component="footer" className={classes.footer}>
-        <Box>
-          <Logo />
-        </Box>
+    <Container maxWidth="xl" component="footer" className={classes.footer}>
+      <Box>
+        <Logo />
+      </Box>
 
-        <Box mb={1}>
-          <Copyright />
-        </Box>
+      <Box mb={1}>
+        <Copyright />
+      </Box>
 
-        <Divider />
+      <Divider />
 
-        <Grid container justify="center">
-          {socials.map((social, idx) => (
-            <Box key={idx} className={classes.social}>
-              <Typography>
-                <a href={social.link} className={classes.socialLink}>
-                  {
-                    social.icon === 'Facebook' ? <Facebook/> :
-                      social.icon === 'Instagram' ? <Instagram/> :
-                        social.icon === 'Youtube' ? <YouTube/> :
-                          <Twitter/>
-                  }
-                </a>
-              </Typography>
-            </Box>
-          ))}
-        </Grid>
-      </Container>
-    </React.Fragment>
+      <Grid container justify="center">
+        {socials.map((social, idx) => (
+          <Box key={idx} className={classes.social}>
+            <Typography>
+              <a href={social.link} className={classes.socialLink}>
+                {
+                  social.icon === 'Facebook' ? <Facebook/> :
+                    social.icon === 'Instagram' ? <Instagram/> :
+                      social.icon === 'Youtube' ? <YouTube/> :
+                        <Twitter/>
+                }
+              </a>
+            </Typography>
+          </Box>
+        ))}
+      </Grid>
+    </Container>
   );
 };
 

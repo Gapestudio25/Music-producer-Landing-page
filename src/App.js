@@ -24,23 +24,21 @@ function App() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <div className={classes.body}>
-        <Header/>
-        <Main/>
-        <Divider className={classes.divider} />
-        <Playlist/>
-        <Divider className={classes.divider} />
-        <AboutMe/>
-        <Divider className={classes.divider} />
-        <OurTeam/>
-        <Divider className={classes.divider} />
-        <Pricing/>
-        <Divider className={classes.divider} />
-        <ContactUs/>
-        <Footer/>
-      </div>
-    </React.Fragment>
+    <div className={classes.body}>
+      <Header/>
+      <Main/>
+      <Divider className={classes.divider} />
+      <Playlist/>
+      <Divider className={classes.divider} />
+      <AboutMe/>
+      <Divider className={classes.divider} />
+      <OurTeam/>
+      <Divider className={classes.divider} />
+      <Pricing/>
+      <Divider className={classes.divider} />
+      <ContactUs/>
+      <Footer/>
+    </div>
   );
 }
 

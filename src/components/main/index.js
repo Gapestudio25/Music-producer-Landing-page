@@ -34,8 +34,6 @@ const useStyles = makeStyles((theme) => ({
       background: 'rgba(255, 255, 255, .3)',
     }
   },
-  // (Asphal) #0d050b, (Rojo) #ef0109, (Miliano Red) #a70510,
-  // (Navy Blue) #010075, (Red Devil) #86010d, (Silver Chalice) #a1a1a1,
 }));
 
 const Main = () => {

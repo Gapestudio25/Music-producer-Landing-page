@@ -21,8 +21,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   pricing: {
-    // height: '100vh',
-    //background: '#0400EB',
     paddingBottom: theme.spacing(4),
     color: '#ffffff'
   },
@@ -69,7 +67,6 @@ const tiers = [
   },
   {
     title: 'Standard Package',
-    subheader: 'Most popular',
     price: '20',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     Maecenas libero ipsum, tincidunt mattis posuere eu, fermentum ac mauris.`,
@@ -92,57 +89,54 @@ export default function Pricing() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <div id="pricing" className={classes.pricing}>
-        <CssBaseline />
-        <Container maxWidth="sm" component="main" className={classes.heroContent}>  
-          <Typography component="h1" variant="h2" align="center" color="inherit" gutterBottom>
-            Pricing
-          </Typography>
-        </Container>
-        
-        <Container maxWidth="xl" component="main">
-          <Grid container spacing={5} alignItems="flex-end">
-            {tiers.map((tier) => (
-              <Grid item key={tier.title} xs={12} sm={tier.title === 'Professional Package' ? 12 : 6} md={4}>
-                <Card>
-                  <CardHeader
-                    title={tier.title}
-                    subheader={tier.subheader}
-                    titleTypographyProps={{ align: 'center' }}
-                    subheaderTypographyProps={{ align: 'center' }}
-                    className={classes.cardHeader}
-                  />
-                  <CardContent>
-                    <div className={classes.cardDescription}>
-                      <Typography color="textPrimary" align="center" component="p">
-                        {tier.description}
+    <div id="pricing" className={classes.pricing}>
+      <CssBaseline />
+      <Container maxWidth="sm" component="main" className={classes.heroContent}>  
+        <Typography component="h1" variant="h2" align="center" color="inherit" gutterBottom>
+          Pricing
+        </Typography>
+      </Container>
+
+      <Container maxWidth="xl" component="main">
+        <Grid container spacing={5} alignItems="flex-end">
+          {tiers.map((tier) => (
+            <Grid item key={tier.title} xs={12} sm={tier.title === 'Professional Package' ? 12 : 6} md={4}>
+              <Card>
+                <CardHeader
+                  title={tier.title}
+                  subheader={tier.subheader}
+                  titleTypographyProps={{ align: 'center' }}
+                  className={classes.cardHeader}
+                />
+                <CardContent>
+                  <div className={classes.cardDescription}>
+                    <Typography color="textPrimary" align="center" component="p">
+                      {tier.description}
+                    </Typography>
+                  </div>
+                  <div className={classes.cardPricing}>
+                    <Typography component="h2" variant="h3" color="textPrimary">
+                      ${tier.price}
+                    </Typography>
+                  </div>
+                  <ul>
+                    {tier.content.map((line) => (
+                      <Typography component="li" variant="subtitle1" align="center" key={line}>
+                        {line}
                       </Typography>
-                    </div>
-                    <div className={classes.cardPricing}>
-                      <Typography component="h2" variant="h3" color="textPrimary">
-                        ${tier.price}
-                      </Typography>
-                    </div>
-                    <ul>
-                      {tier.content.map((line) => (
-                        <Typography component="li" variant="subtitle1" align="center" key={line}>
-                          {line}
-                        </Typography>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardActions>
-                    <Button fullWidth variant={tier.buttonVariant} color="primary">
-                      {tier.buttonText}
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </div>
-    </React.Fragment>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardActions>
+                  <Button fullWidth variant={tier.buttonVariant} color="primary">
+                    {tier.buttonText}
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </div>
   );
 }

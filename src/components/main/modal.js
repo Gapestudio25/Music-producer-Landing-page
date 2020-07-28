@@ -69,41 +69,44 @@ const Modal = ({open, close}) => {
   
   const encode = (data) => {
     const formData = new FormData();
+
     Object.keys(data).forEach((k)=>{
-      formData.append(k,data[k])
+      formData.append(k,data[k]);
     });
-    return formData
-  }
+
+    return formData;
+  };
 
   const handleSubmit = e => {
-    const data = { "form-name": "contact", name, email }
+    const data = {'form-name': 'contact', name, email};
     
-    fetch("/", {
-      method: "POST",
-      // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
-      body: encode(data)
+    fetch('/', {
+      method: 'POST',
+      body: encode(data),
     })
       .then(() => {
         handleCloseModal();
-        alert("Form Submission Successful!!");
+        alert('Form Submission Successful!!');
       })
       .catch(error => {
         handleCloseModal();
-        alert("Form Submission Failed!");
+        alert('Form Submission Failed!');
+        console.log(error);
       });
 
     e.preventDefault();
   };
 
   const handleChange = e => {
-    const {name, value} = e.target
+    const {name, value} = e.target;
+
     if (name === 'name'){
-      return setName(value)
+      return setName(value);
     }
     if (name === 'email'){
-      return setEmail(value)
+      return setEmail(value);
     }
-  }
+  };
 
   return (
     <ModalUi

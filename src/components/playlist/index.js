@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(6, 0, 4),
   },
   playlist: {
-    //background: '#FF0318',
     color: '#ffffff',
     paddingBottom: theme.spacing(4),
   },
@@ -27,26 +26,24 @@ const Playlist = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <div id="playlist" className={classes.playlist}>
-        <CssBaseline />
-        <Container maxWidth="sm" component="main" className={classes.heroContent}>
-          <Typography component="h1" variant="h2" align="center" color="inherit" gutterBottom>
-            Playlist
-          </Typography>
-        </Container>
-        
-        <Container maxWidth="xl" component="main">
-          <Grid container justify="center" alignItems="center">
-            <iframe
-              src="https://player.beatstars.com/?storeId=107684"
-              title="Music Reproducer"
-              className={classes.reproducer}
-            />
-          </Grid>
-        </Container>
-      </div>
-    </React.Fragment>
+    <div id="playlist" className={classes.playlist}>
+      <CssBaseline />
+      <Container maxWidth="sm" component="main" className={classes.heroContent}>
+        <Typography component="h1" variant="h2" align="center" color="inherit" gutterBottom>
+          Playlist
+        </Typography>
+      </Container>
+      
+      <Container maxWidth="xl" component="main">
+        <Grid container justify="center" alignItems="center">
+          <iframe
+            src="https://player.beatstars.com/?storeId=107684"
+            title="Music Reproducer"
+            className={classes.reproducer}
+          />
+        </Grid>
+      </Container>
+    </div>
   );
 };
 
