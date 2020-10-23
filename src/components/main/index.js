@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import Modal from './modal';
 import {makeStyles} from '@material-ui/core/styles';
-import mainImage from '../../assets/Pic02.jpeg';
+import mainImage from '../../assets/portada.jpg';
 import {Grid, Container, Typography, Button, CssBaseline} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    background: 'radial-gradient(circle, rgba(134,1,13,1) 0%, rgba(20,19,119,1) 100%)',
+    background:'black',//radial-gradient(circle, rgba(134,1,13,1) 0%, rgba(20,19,119,1) 50%)',
     marginTop: 'auto',
     color: '#ffffff',
     padding: '70px 0',
@@ -16,14 +16,15 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     width:'100%',
-    borderRadius: '10%',
+    borderRadius: '10% 10%',
   },
   btnModalOpener: {
-    background: '#86010d',
+
+    background: '#FF3EB3',
     color: '#ffffff',
     border: '1px solid #ffffff',
     '&:hover': {
-      background: 'RGBA(134,1,13,.8)',
+    background: '#FAC03D',
     }
   },
   btnTransparent: {
@@ -51,25 +52,22 @@ const Main = () => {
         <CssBaseline />
         <Grid container item direction="column" xs={12} md={6} className={classes.mainText}>
           <Grid item>
+            {/* <Typography variant="h4" align="center" color="initial" gutterBottom> */}
+              {/* Great and High */} 
+            {/* </Typography> */}
             <Typography variant="h4" align="center" color="initial" gutterBottom>
-              Great and High 
+              BEATS DE ALTA CALIDAD
             </Typography>
-            <Typography variant="h4" align="center" color="initial" gutterBottom>
-              QUALITY INSTRUMENTALS 
-            </Typography>
-            <Typography variant="h4" align="center" color="initial" gutterBottom>
-              For Everyone
+          </Grid>
+          <Grid item>
+            <Typography variant="h5" align="center" color="initial" gutterBottom>
+			  10 BEATS Para Artistas Independientes
             </Typography>
           </Grid>
           <Grid item>
             <Typography variant="h5" align="center" color="initial" gutterBottom>
               <span role="img" aria-label="fire-emoji">🔥 </span> 
-              Get a FREE BEAT
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant="h6" align="center" color="initial" gutterBottom>
-              Delivered in your inbox TODAY!!!
+               Directo en tu bandeja de entrada en '3 minutos'
             </Typography>
             <Grid container item alignItems="flex-end" justify="space-evenly">
               <Grid item>
@@ -79,14 +77,6 @@ const Main = () => {
                   onClick={handleOpenModal}
                 >
                   Get Beat
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button
-                  variant="outlined"
-                  className={classes.btnTransparent}
-                >
-                  Read More
                 </Button>
               </Grid>
             </Grid>

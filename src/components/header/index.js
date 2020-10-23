@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
   toolbarSecondary: {
     justifyContent: 'space-between',
     overflowX: 'auto',
-    background: 'rgba(255, 255, 255, .3)',
+    background: 'black',
     paddingLeft: 'auto',
     paddingRight: 'auto',
-    borderBottom: '1px solid #ffffff',
+    borderBottom: '1px solid black',
     color: '#ffffff',
   },
   toolbarLink: {
@@ -43,8 +43,8 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     borderRadius: '50%',
-    width: '60px',
-    height: '60px',
+    width: '70px',
+    height: '70px',
     margin: '0 20px',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    background: '#7986cc',
+    background: 'black',
     color: '#ffffff',
   },
   content: {
