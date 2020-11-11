@@ -7,6 +7,8 @@ import {
   Grid,
 } from '@material-ui/core';
 
+import aboutImage from '../../assets/about.jpg';
+
 const useStyles = makeStyles((theme) => ({
   aboutMe: {
     paddingBottom: theme.spacing(4),
@@ -18,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   imageForm: {
     width: '350px',
     height: '350px',
-    borderRadius: '40%',
+    borderRadius: '50%',
   },
 }));
 
@@ -30,26 +32,28 @@ const AboutMe = () => {
       <CssBaseline />
       <Container maxWidth="sm" component="main" className={classes.heroContent}>  
         <Typography component="h1" variant="h2" align="center" color="inherit" gutterBottom>
-          About Me
         </Typography>
       </Container>
 
       <Container maxWidth="md" component="main">
         <Grid container alignItems="center">
           <Grid item xs={6}>
-            <img className={classes.imageForm} src="https://via.placeholder.com/150" alt="Foto de perfil"/>
+            <img className={classes.imageForm} src={aboutImage} alt="Foto de perfil"/>
           </Grid>
           
           <Grid item xs={6}>
-            <Typography variant="h5" align="center" color="inherit" gutterBottom>
+            <Typography variant="h3" align="center" color="inherit" gutterBottom>
              Gilbert Sosa
             </Typography>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in porttitor diam, maximus venenatis diam. In porta velit enim, nec pharetra nulla congue id. Phasellus vel augue ante. Pellentesque vitae mi non lacus iaculis elementum. Fusce egestas nisi urna, id gravida lacus imperdiet sit amet. Curabitur sit amet justo in massa posuere ornare. Aliquam consectetur eros ac consectetur auctor. Donec convallis ex sed ligula feugiat, non euismod metus pellentesque. Mauris ac aliquet dolor, aliquam blandit velit. Ut at pharetra nunc. Proin porta dui nec laoreet posuere.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in porttitor diam, maximus venenatis diam. In porta velit enim, nec pharetra nulla congue id. Phasellus vel augue ante. Pellentesque vitae mi non lacus iaculis elementum. Fusce egestas nisi urna, id gravida lacus imperdiet sit amet. Curabitur sit amet justo in massa posuere ornare. Aliquam consectetur eros ac consectetur auctor. Donec convallis ex sed ligula feugiat, non euismod metus pellentesque. Mauris ac aliquet dolor, aliquam blandit velit. Ut at pharetra nunc. Proin porta dui nec laoreet posuere.
-            </p>
+          <Typography variant="h6" align="left" color="inherit" gutterBottom>
+               Hey!! Que tal estas? Mi nombre es Gilbert Sosa, tambien conocido como "Leggy Beats". Soy un
+              productor musical nacido en la ciudad de Bonao, Republica Dominicana.
+              He estado envuelto en la musica desde el año "2016"; ademas de ser productor soy el fundador y
+              propietario de "Leggy Studios".
+              Me especialiso en el "Reggaeton" inspirado en los sonidos de la musica alternativa. Mi musica se podria
+              describir como un Reggaeton actual, inspirado en la musica alternativa moderna.
+            </Typography>
+       
           </Grid>
         </Grid>
       </Container>

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(1, 0),
     marginTop: theme.spacing(5),
-    background: 'rgba(255, 255, 255, .3)',
+    background: 'black', //'rgba(255, 255, 255, .3)',
     borderTop: '1px solid #ffffff',
     color: '#ffffff',
     [theme.breakpoints.up('sm')]: {
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     borderRadius: '50%',
-    width: '80px',
+    width: '200px',
   },
   social: {
     margin: '30px 30px 0 30px',

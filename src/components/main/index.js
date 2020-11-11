@@ -16,10 +16,9 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     width:'100%',
-    borderRadius: '10% 10%',
+
   },
   btnModalOpener: {
-
     background: '#FF3EB3',
     color: '#ffffff',
     border: '1px solid #ffffff',

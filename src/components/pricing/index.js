@@ -57,29 +57,29 @@ const useStyles = makeStyles((theme) => ({
 
 const tiers = [
   {
-    title: 'Simple Package',
-    price: '10',
+    title: 'Licencia basica',
+    price: '$40',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     Maecenas libero ipsum, tincidunt mattis posuere eu, fermentum ac mauris.`,
-    content: ['5 Beats'],
+    content: ['4 Beats'],
     buttonText: 'Purchase Now',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Standard Package',
-    price: '20',
+    title: 'Licencia Estandar',
+    price: '80',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     Maecenas libero ipsum, tincidunt mattis posuere eu, fermentum ac mauris.`,
-    content: ['11 Beats'],
+    content: ['4 Beats'],
     buttonText: 'Purchase Now',
     buttonVariant: 'contained',
   },
   {
-    title: 'Professional Package',
-    price: '40',
+    title: 'Licencia Profesional',
+    price: '160',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     Maecenas libero ipsum, tincidunt mattis posuere eu, fermentum ac mauris.`,
-    content: ['25 Beats'],
+    content: ['4 Beats'],
     buttonText: 'Purchase Now',
     buttonVariant: 'outlined',
   },

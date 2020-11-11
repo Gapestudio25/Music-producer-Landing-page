@@ -1,0 +1,31 @@
+Boston Pharmaceuticals | Remote Opportunity
+
+Technology Engineer
+
+12 Month Contract to Hire
+
+ 
+
+https://www.bostonpharmaceuticals.com/
+
+ 
+
+1. Windows Suites Experience: This will be supporting a 90% Windows environment, specifically Sharepoint/Office 365/OneDrive/Teams (3-5 years)
+2. Data management experience - specifically working with Data science team & managing the intergation of Sas into OneDrive/Sharepoint using API's (3-5 years)
+3. Cloud Integration knowledge - specifically troubleshooting & knoweldge of "born in the cloud" environments. (3-5 years)
+
+**knowledge of scripting (no preference on language) would be appreciated**
+
+ 
+
+Description
+
+ 
+
+Technology support engineer is going to act as the jack of all trades for Boston Pharma - reporting directly to the Head of IT. This role is going to be responsible for everything that isnt handled by the MSP(currently RSM) who is responsible for tier I/II tickets along with Network support & development work. RSM was originally a soup to nuts IT provider for Boston Pharma but their footprint is being consolidated with the addition of Ed to scope/shape technology strategy moving forward. This is a critical need for Ed & Boston Pharma Technology.
+
+This person needs to be comfortable working without alot of oversight & ok with doing work that falls outside their scope. They will be the point person to manage/lead & provide oversight to the MSP(from Ed's directive) on work that needs to be done along with work in tandem to resolve any issues.
+
+The technology support engineer will be responsible for maintaining/supporting & troubleshooting any issues that arise within the Boston Pharma technology enviornment. This will include, but is not limited to Microsoft suites issues - Office 365, OneDrive, Sharepoint & sharepoint utilization. Cloud Integration work allowing the different products to speak to eachother for increased utilization & innovation. Data mgmt & integration around Sas and its compatibility with One Drive/Sharepoint.
+
+A passion for answering questions & problem solving is needed to thrive in this role & environment. Someone from a Biotech or Pharma startup would be well suited for this customer.
